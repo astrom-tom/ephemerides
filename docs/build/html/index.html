@@ -1,0 +1,430 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Ephemerides &mdash; ephemerides 19.7.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="#" class="icon icon-home"> ephemerides
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Ephemerides</a></li>
+<li><a class="reference internal" href="#change-log">Change log</a></li>
+<li><a class="reference internal" href="#what-is-ephemerides">What is Ephemerides?</a></li>
+<li><a class="reference internal" href="#how-to-use-it">How to use it?</a><ul>
+<li><a class="reference internal" href="#installation">Installation</a></li>
+<li><a class="reference internal" href="#usage">Usage</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#tests">Tests</a></li>
+</ul>
+</div>
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">ephemerides</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="#">Docs</a> &raquo;</li>
+        
+      <li>Ephemerides</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="ephemerides">
+<h1>Ephemerides<a class="headerlink" href="#ephemerides" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+<div class="section" id="change-log">
+<h1>Change log<a class="headerlink" href="#change-log" title="Permalink to this headline">¶</a></h1>
+<dl class="simple">
+<dt><strong>19.7.0</strong>:</dt><dd><ul class="simple">
+<li><p>First version</p></li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="what-is-ephemerides">
+<h1>What is Ephemerides?<a class="headerlink" href="#what-is-ephemerides" title="Permalink to this headline">¶</a></h1>
+<p><em>Ephemerides</em> is a very short module that retrieves the night information for a given date and a given observatory. All the informations are extracted from the European Southerm Observatory [ESO] ephemerides <a class="reference external" href="https://www.eso.org/sci/observing/tools/calendar/skycalc.html">webpage</a> that uses the <em>skycalc</em> tool of John Thorstensen.</p>
+<p>As such, <em>ephmerides</em> does not make any compuation but relies on the ESO official ephemerides.</p>
+</div>
+<div class="section" id="how-to-use-it">
+<h1>How to use it?<a class="headerlink" href="#how-to-use-it" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<p><em>Ephemerides</em> is available on pip. To install is you can just use the traditional:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">ephemerides</span> <span class="o">--</span><span class="n">user</span>
+</pre></div>
+</div>
+<p>Using this command all the dependencies will be installed along the present module</p>
+</div>
+<div class="section" id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
+<p><em>Ephemerides</em> must be used as any other python module.</p>
+<p>To import it:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="kn">import</span> <span class="nn">ephemerides</span>
+</pre></div>
+</div>
+<p>For the main functinnality of the module you must select the observatory. As for now, five of them are available and can be listed via the <strong>list_obs()</strong> function:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="n">ephemerides</span><span class="o">.</span><span class="n">list_obs</span><span class="p">()</span>
+<span class="p">[</span><span class="s1">&#39;Paranal&#39;</span><span class="p">,</span> <span class="s1">&#39;LaSilla&#39;</span><span class="p">,</span> <span class="s1">&#39;MaunaKea&#39;</span><span class="p">,</span> <span class="s1">&#39;Palomar&#39;</span><span class="p">,</span> <span class="s1">&#39;Tololo&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Then, you must webscrap the epehemerides from the ESO website. To do so yyou use the <strong>get_yearly_ephemerides()</strong> function. The help of this function will help you to use it:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="n">help</span><span class="p">(</span><span class="n">ephemerides</span><span class="o">.</span><span class="n">get_yearly_ephemerides</span><span class="p">)</span>
+
+<span class="n">get_yearly_ephemerides</span><span class="p">(</span><span class="n">observatory</span><span class="p">,</span> <span class="n">time</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">This</span> <span class="n">function</span> <span class="n">gets</span> <span class="n">the</span> <span class="n">ephemerides</span> <span class="k">for</span> <span class="n">the</span> <span class="n">coming</span> <span class="n">year</span>
+    <span class="n">Parameters</span>
+    <span class="o">----------</span>
+    <span class="n">observatory</span> <span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+                  <span class="n">name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">observatory</span> <span class="p">(</span><span class="n">use</span> <span class="n">eso_time</span><span class="o">.</span><span class="n">list_obs</span><span class="p">()</span>
+                  <span class="n">to</span> <span class="nb">print</span> <span class="n">the</span> <span class="nb">list</span><span class="p">)</span>
+
+    <span class="n">time</span> <span class="p">:</span> <span class="n">datetime</span> <span class="nb">object</span>
+           <span class="n">optional</span> <span class="n">argument</span>
+
+    <span class="n">Return</span>
+    <span class="o">------</span>
+    <span class="kc">None</span>
+</pre></div>
+</div>
+<p>As you can see, this function will download the ephemerides for the next year (so you do not have to do it too often). It takes one mandatory argument which is the name of the observatory. By default this function will take the ephemerides of the coming year starting from now. If you want passed ephemerides you must provide a different date. This is done using the <em>datetime</em> python module. If we are in the first case we will use and we want the ephemerides for the Paranal observatory we will do:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">4</span><span class="p">]:</span> <span class="n">ephemerides</span><span class="o">.</span><span class="n">get_yearly_ephemerides</span><span class="p">(</span><span class="s1">&#39;Paranal&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This function will webscrap all the ephemerides for the next month. The files will be places in your home directory in a hidden subdirectory called <em>ephemerides</em>. They have a format ‘ESO_ephem_Observatory_name_year_month.txt’ and are human readable.</p>
+<p>Once you have them all you can use the main functionality of the code, the <strong>get_times</strong> object. The help of this class gives:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>In [5]: help(ephemerides.get_times)
+
+class get_times(builtins.object)
+ |  get_times(observatory, today=False)
+ |
+ |  This class create the get_times object.
+ |  This object should be the only one to be
+ |  used when looking for ESO ephemerides
+ |
+ |  This class does not compute anything. It fetches the
+ |  time from the ESO-ephemerides website and take
+ |  everything from there.
+ |
+ |  The current time is given by the clock of the system
+ |
+ |  __init__(self, observatory, today=False)
+ |      Class initialization
+ |      Parameters
+ |      ----------
+ |      Observatory : str
+ |                    name of the observatory for which we want the ephemerides
+ |
+ |      today :  datetime object
+ |               Optional: if none is given the module will take the present!
+ |               with datetime.datetime.now()
+ |
+ |      Returns
+ |      -------
+ |      None
+</pre></div>
+</div>
+<p>As before, this class takes an observatory argument (the name of the observatory) and eventually a <em>today</em> argument that is a datetime object. If none is given, the system clock is used. In the first case:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">6</span><span class="p">]:</span> <span class="n">t</span> <span class="o">=</span> <span class="n">ephemerides</span><span class="o">.</span><span class="n">get_times</span><span class="p">(</span><span class="s1">&#39;Paranal&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>And that’s it! From this you have a lot of quantities available.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It is important to understand one thing when you use ephemerides. Since it has been written to reflet the current night information, the date change does not happen at midnight but at noon! So if your system clock (or the time you give as argument) is between midnight and noon, you will get all the information from the previous evening to the sunrise following it</p>
+</div>
+<p>In our current example, the code was ran at 2.11 pm on the 4th of July 2019. Consequently, the information that are accessible will be for the following night. All the attributes can be listed using <strong>__dict__</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>       <span class="n">In</span> <span class="p">[</span><span class="mi">7</span><span class="p">]:</span> <span class="n">t</span><span class="o">.</span><span class="vm">__dict__</span>
+
+       <span class="p">{</span><span class="s1">&#39;obs&#39;</span><span class="p">:</span> <span class="s1">&#39;Paranal&#39;</span><span class="p">,</span>
+<span class="s1">&#39;tomorrow&#39;</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2019</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">528871</span><span class="p">),</span>
+<span class="s1">&#39;year&#39;</span><span class="p">:</span> <span class="mi">2019</span><span class="p">,</span>
+<span class="s1">&#39;month&#39;</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span>
+<span class="s1">&#39;day&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+<span class="s1">&#39;time&#39;</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span>
+<span class="s1">&#39;month_header&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;                                           ***** 2019 JULY *****</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Calendar for ESO VLT (Cerro Paranal), west longitude (h.m.s) =   4 41 36, latitude (d.m) = -24 37.4</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Note that each line lists events of one night, spanning two calendar dates.  Rise/set times are given</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;in Chilean time (  4 hr W), for 2635 m above surroundings, DAYLIGHT time used, * shows night clocks are reset.</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Moon coords. and illum. are for local midnight, even if moon is down.  Program: John Thorstensen, Dartmouth College.</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">],</span>
+<span class="s1">&#39;month_data&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Mon Jul 01/Tue Jul 02  8666.7   17 58 03   18 12  19 26   6 05  7 19   13 23   0 04    7 01  17 18     1   6 06.5  22 00</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Tue Jul 02/Wed Jul 03  8667.7   18 02 00   18 13  19 26   6 05  7 19   13 27   0 08    8 02  18 16     0   7 07.7  22 23</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Wed Jul 03/Thu Jul 04  8668.7   18 05 56   18 13  19 26   6 06  7 19   13 31   0 12   .. ..  19 20     2   8 09.5  21 19</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Thu Jul 04/Fri Jul 05  8669.7   18 09 53   18 14  19 27   6 06  7 19   13 36   0 16   .. ..  20 25     7   9 10.5  18 50</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Fri Jul 05/Sat Jul 06  8670.7   18 13 49   18 14  19 27   6 06  7 19   13 40   0 20   .. ..  21 31    15  10 09.3  15 10</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Sat Jul 06/Sun Jul 07  8671.7   18 17 46   18 14  19 27   6 06  7 18   13 44   0 24   .. ..  22 35    24  11 05.7  10 36</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Sun Jul 07/Mon Jul 08  8672.7   18 21 42   18 15  19 28   6 06  7 18   13 49   0 28   .. ..  23 38    35  11 59.8   5 29</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Mon Jul 08/Tue Jul 09  8673.7   18 25 39   18 15  19 28   6 06  7 18   13 53   0 32   .. ..   0 39    46  12 52.2   0 09</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Tue Jul 09/Wed Jul 10  8674.7   18 29 36   18 15  19 28   6 06  7 18   13 57   0 36   .. ..   1 38    57  13 43.9 - 5 06</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Wed Jul 10/Thu Jul 11  8675.7   18 33 32   18 16  19 29   6 05  7 18   14 01   0 40   .. ..   2 37    68  14 35.5 -10 02</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Thu Jul 11/Fri Jul 12  8676.7   18 37 29   18 16  19 29   6 05  7 18   14 06   0 44   .. ..   3 36    78  15 27.9 -14 23</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Fri Jul 12/Sat Jul 13  8677.7   18 41 25   18 17  19 29   6 05  7 18   14 10   0 48   .. ..   4 34    86  16 21.2 -17 56</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Sat Jul 13/Sun Jul 14  8678.7   18 45 22   18 17  19 30   6 05  7 18   14 14   0 52   .. ..   5 31    92  17 15.6 -20 31</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Sun Jul 14/Mon Jul 15  8679.7   18 49 18   18 18  19 30   6 05  7 17   14 19   0 55   16 16   6 26    97  18 10.5 -21 59</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Mon Jul 15/Tue Jul 16  8680.7   18 53 15   18 18  19 30   6 05  7 17   14 23   0 59   17 07   7 18    99  19 05.4 -22 19</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Tue Jul 16/Wed Jul 17  8681.7   18 57 11   18 18  19 31   6 05  7 17   14 27   1 03   17 59  .. ..   100  19 59.2 -21 30</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Wed Jul 17/Thu Jul 18  8682.7   19 01 08   18 19  19 31   6 04  7 17   14 31   1 07   18 52  .. ..    98  20 51.3 -19 41</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Thu Jul 18/Fri Jul 19  8683.7   19 05 05   18 19  19 31   6 04  7 16   14 36   1 10   19 45  .. ..    95  21 41.3 -16 58</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Fri Jul 19/Sat Jul 20  8684.7   19 09 01   18 20  19 32   6 04  7 16   14 40   1 14   20 37  .. ..    90  22 29.2 -13 34</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Sat Jul 20/Sun Jul 21  8685.7   19 12 58   18 20  19 32   6 04  7 16   14 44   1 18   21 29  .. ..    83  23 15.2 - 9 39</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Sun Jul 21/Mon Jul 22  8686.7   19 16 54   18 21  19 32   6 04  7 15   14 49   1 21   22 19  .. ..    76   0 00.0 - 5 22</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Mon Jul 22/Tue Jul 23  8687.7   19 20 51   18 21  19 33   6 03  7 15   14 53   1 25   23 09  .. ..    67   0 44.3 - 0 53</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Tue Jul 23/Wed Jul 24  8688.7   19 24 47   18 21  19 33   6 03  7 15   14 57   1 29   24 00  .. ..    58   1 28.8   3 41</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Wed Jul 24/Thu Jul 25  8689.7   19 28 44   18 22  19 33   6 03  7 14   15 01   1 32    0 52  .. ..    48   2 14.4   8 10</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Thu Jul 25/Fri Jul 26  8690.7   19 32 40   18 22  19 34   6 02  7 14   15 06   1 36    1 46  .. ..    38   3 02.0  12 25</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Fri Jul 26/Sat Jul 27  8691.7   19 36 37   18 23  19 34   6 02  7 13   15 10   1 40    2 42  .. ..    28   3 52.3  16 13</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Sat Jul 27/Sun Jul 28  8692.7   19 40 34   18 23  19 35   6 02  7 13   15 14   1 43    3 41  .. ..    19   4 46.0  19 20</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Sun Jul 28/Mon Jul 29  8693.7   19 44 30   18 24  19 35   6 01  7 12   15 19   1 47    4 43  .. ..    12   5 43.2  21 29</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Mon Jul 29/Tue Jul 30  8694.7   19 48 27   18 24  19 35   6 01  7 12   15 23   1 50    5 44  .. ..     5   6 43.3  22 25</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Tue Jul 30/Wed Jul 31  8695.7   19 52 23   18 25  19 36   6 00  7 11   15 27   1 54    6 44  17 00     1   7 45.3  21 54</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Wed Jul 31/Thu Aug 01  8696.7   19 56 20   18 25  19 36   6 00  7 11   15 32   1 57    7 40  18 05     0   8 47.5  19 55</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">],</span>
+<span class="s1">&#39;day_data&#39;</span><span class="p">:</span> <span class="s1">&#39;Thu Jul 04/Fri Jul 05  8669.7   18 09 53   18 14  19 27   6 06  7 19   13 36   0 16   .. ..  20 25     7   9 10.5  18 50</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>
+<span class="s1">&#39;twi_eve&#39;</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2019</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">27</span><span class="p">),</span>
+<span class="s1">&#39;twi_mor&#39;</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2019</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span>
+<span class="s1">&#39;night_length&#39;</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">seconds</span><span class="o">=</span><span class="mi">38340</span><span class="p">),</span>
+<span class="s1">&#39;half_night&#39;</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">seconds</span><span class="o">=</span><span class="mi">19170</span><span class="p">),</span>
+<span class="s1">&#39;tenth_night&#39;</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">seconds</span><span class="o">=</span><span class="mi">3834</span><span class="p">),</span>
+<span class="s1">&#39;fractions&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;1/10&#39;</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2019</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">54</span><span class="p">),</span>
+ <span class="s1">&#39;2/10&#39;</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2019</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">48</span><span class="p">),</span>
+ <span class="s1">&#39;3/10&#39;</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2019</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">38</span><span class="p">,</span> <span class="mi">42</span><span class="p">),</span>
+ <span class="s1">&#39;4/10&#39;</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2019</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="mi">36</span><span class="p">),</span>
+ <span class="s1">&#39;5/10&#39;</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2019</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">46</span><span class="p">,</span> <span class="mi">30</span><span class="p">),</span>
+ <span class="s1">&#39;6/10&#39;</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2019</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">24</span><span class="p">),</span>
+ <span class="s1">&#39;7/10&#39;</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2019</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">54</span><span class="p">,</span> <span class="mi">18</span><span class="p">),</span>
+ <span class="s1">&#39;8/10&#39;</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2019</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">58</span><span class="p">,</span> <span class="mi">12</span><span class="p">),</span>
+ <span class="s1">&#39;9/10&#39;</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2019</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span>
+ <span class="s1">&#39;10/10&#39;</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2019</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">)}}</span>
+</pre></div>
+</div>
+<p>The most important are:</p>
+<ul class="simple">
+<li><p><strong>t.obs</strong>: The name of the observatory you have given</p></li>
+<li><p><strong>t.tomorrow</strong>: The date of tomorrow (if you have been running the case before noon, it will be today).</p></li>
+<li><p><strong>t.month_data</strong>: the full ephemerides table from the skycalc tool.</p></li>
+<li><p><strong>t.day_data</strong>: The line of the table of the current night.</p></li>
+<li><p><strong>t.twi_eve</strong>: The end of evening twilight for the current night [datetime.datetime object]</p></li>
+<li><p><strong>t.twi_mor</strong>: The beginning of morning twilight for the current night [datetime.datetime.object]</p></li>
+<li><p><strong>t.night_length</strong>: The length of the night [datetime.timedelta object]</p></li>
+<li><p><strong>t.half_night</strong>: The length of half of the night [datetime.timedelta object]</p></li>
+<li><p><strong>t.tenth_night</strong>: The duration of 1/10 of the night [datetime.timedelta]</p></li>
+<li><p><strong>t.fractions</strong>: This is a dictionnary containing the hours of all the 1/10th of the night (1/10, 2/10….10/10). Each keyword are the fraction (e.g. 1/10) and the values are one it occures during the night (as a datetime.datetime object).</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="tests">
+<h1>Tests<a class="headerlink" href="#tests" title="Permalink to this headline">¶</a></h1>
+<p>A short testing suite have been implemented in the module and can be ran with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">8</span><span class="p">]:</span> <span class="n">ephemerides</span><span class="o">.</span><span class="n">test</span><span class="p">()</span>
+
+<span class="o">---</span><span class="n">UnitTest</span> <span class="n">the</span> <span class="n">miscellaneous</span> <span class="n">functions</span>
+<span class="n">test_list_obs</span> <span class="p">(</span><span class="n">ephemerides</span><span class="o">.</span><span class="n">miscellaneous</span><span class="o">.</span><span class="n">tests</span><span class="p">)</span> <span class="o">...</span> <span class="n">ok</span>
+
+<span class="o">----------------------------------------------------------------------</span>
+<span class="n">Ran</span> <span class="mi">1</span> <span class="n">test</span> <span class="ow">in</span> <span class="mf">0.000</span><span class="n">s</span>
+
+<span class="n">OK</span>
+
+<span class="o">---</span><span class="n">UnitTest</span> <span class="n">the</span> <span class="n">ephemerides</span> <span class="nb">object</span> <span class="kc">True</span>
+<span class="n">test_night_length</span> <span class="p">(</span><span class="n">ephemerides</span><span class="o">.</span><span class="n">ephemerides</span><span class="o">.</span><span class="n">eso_time_test</span><span class="p">)</span> <span class="o">...</span> <span class="n">ok</span>
+<span class="n">test_today_attributes</span> <span class="p">(</span><span class="n">ephemerides</span><span class="o">.</span><span class="n">ephemerides</span><span class="o">.</span><span class="n">eso_time_test</span><span class="p">)</span> <span class="o">...</span> <span class="n">ok</span>
+<span class="n">test_today_data</span> <span class="p">(</span><span class="n">ephemerides</span><span class="o">.</span><span class="n">ephemerides</span><span class="o">.</span><span class="n">eso_time_test</span><span class="p">)</span> <span class="o">...</span> <span class="n">ok</span>
+
+<span class="o">----------------------------------------------------------------------</span>
+<span class="n">Ran</span> <span class="mi">3</span> <span class="n">tests</span> <span class="ow">in</span> <span class="mf">0.003</span><span class="n">s</span>
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><strong>Copyright</strong></p>
+<p>ephemerides is a free software: you can redistribute it and/or modify it under
+the terms of the GNU General Public License as published by the Free Software Foundation,
+version 3 of the License.</p>
+<p>ephemerides is distributed without any warranty; without even the implied warranty of merchantability
+or fitness for a particular purpose.  See the GNU General Public License for more details.</p>
+<p>You should have received a copy of the GNU General Public License along with the program.
+If not, see <a class="reference external" href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a> .</p>
+</div>
+<hr class="docutils" />
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><strong>Disclaimer</strong></p>
+<p>ephemerides is not supported nor endorsed by the European Southern Observatory [ESO].</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, R. Thomas
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
