@@ -1,13 +1,13 @@
 from setuptools import setup
 
-version = '19.7.0'
+version = '19.7.1'
 
 setup(
    name = 'ephemerides',
    version = version,
    author = 'R. Thomas, T. Berg',
    packages = ['ephemerides'],
-   description = 'ESO official ephemerides in Python',
+   description = 'ESO ephemerides in Python',
    python_requires = '>=3.6',
    install_requires = [
         "requests >= 2.22.0",

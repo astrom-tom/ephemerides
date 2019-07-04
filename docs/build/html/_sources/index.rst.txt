@@ -13,7 +13,7 @@ Ephemerides
 Change log
 ==========
 
-**19.7.0**:
+**19.7.1**:
         * First version
 
 What is Ephemerides?
