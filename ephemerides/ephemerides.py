@@ -166,10 +166,16 @@ class get_times():
 
         ##extract sunset and sunrise data
         ##and transform to datetime object
+
+        self.sunset = datetime.datetime(self.year, self.month, self.day, \
+                int(split[9]), int(split[10]), 00)
         self.twi_eve = datetime.datetime(self.year, self.month, self.day, \
                 int(split[11]), int(split[12]), 00)
         self.twi_mor = datetime.datetime(self.tomorrow.year, self.tomorrow.month, \
                 self.tomorrow.day, int(split[13]), int(split[14]), 00)
+        self.sunrise = datetime.datetime(self.tomorrow.year, self.tomorrow.month, \
+                self.tomorrow.day, int(split[15]), int(split[16]), 00)
+
 
         ##and compute worthy information
         self.night_length = self.twi_mor-self.twi_eve
@@ -179,7 +185,7 @@ class get_times():
         ###get all tenth of night points
         self.fractions = {}
         for i in range(10):
-            self.fractions['%s/10'%(i+1)] = self.twi_eve + (i+1)*self.night_length/10
+            self.fractions['%sn'%((i+1)/10)] = self.twi_eve + (i+1)*self.night_length/10
 
 
 ###define errors

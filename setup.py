@@ -1,13 +1,15 @@
 from setuptools import setup
 
-version = '19.7.2'
+version = '19.7.3'
 
 setup(
    name = 'ephemerides',
    version = version,
    author = 'R. Thomas, T. Berg',
+   author_email = 'the.spartan.proj@gmail.com',
    packages = ['ephemerides'],
    description = 'ESO ephemerides in Python',
+   url = 'https://astrom-tom.github.io/ephemerides/build/html/index.html',
    python_requires = '>=3.6',
    install_requires = [
         "requests >= 2.22.0",

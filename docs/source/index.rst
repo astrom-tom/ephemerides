@@ -12,6 +12,9 @@ Ephemerides
 
 Change log
 ==========
+**19.7.3**:
+        * Add sunrise and sunset attributes
+
 **19.7.2**:
         * Add version number
 
