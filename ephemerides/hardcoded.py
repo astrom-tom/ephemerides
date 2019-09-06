@@ -20,16 +20,23 @@ It is the hardcoded parameters
 
 ###standard library
 import os
+import datetime
 from pathlib import Path
 
 ###hidden directory where we save files
 home_hidden = os.path.join(str(Path.home()), '.ephemerides')
 
 
+###saving daylight time dates in Chile
+daylight_save = {'2019': [datetime.datetime(year=2019, month=4, day=7), datetime.datetime(year=2019, month=9, day=8)],
+                 '2020': [datetime.datetime(year=2020, month=4, day=4), datetime.datetime(year=2020, month=9, day=6)],
+                 '2021': [datetime.datetime(year=2021, month=4, day=4), datetime.datetime(year=2021, month=9, day=5)],
+                 '2022': [datetime.datetime(year=2022, month=4, day=3), datetime.datetime(year=2022, month=9, day=4)]}
+
+
 ###observatories:
 observatories = {'Paranal':'v',\
                  'LaSilla':'e',\
-                 'MaunaKea':'m',\
                  'Palomar':'p',\
                  'Tololo':'t'}
 

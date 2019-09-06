@@ -22,7 +22,7 @@ copyright = '2019, R. Thomas'
 author = 'R. Thomas'
 
 # The full version, including alpha/beta/rc tags
-release = '19.7.3'
+release = '19.9.1'
 
 
 # -- General configuration ---------------------------------------------------

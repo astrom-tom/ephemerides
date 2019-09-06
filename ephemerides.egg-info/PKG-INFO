@@ -1,6 +1,6 @@
 Metadata-Version: 1.2
 Name: ephemerides
-Version: 19.7.3
+Version: 19.9.1
 Summary: ESO ephemerides in Python
 Home-page: https://astrom-tom.github.io/ephemerides/build/html/index.html
 Author: R. Thomas, T. Berg

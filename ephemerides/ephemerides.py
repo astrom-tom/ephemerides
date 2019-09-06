@@ -100,6 +100,13 @@ class get_times():
         self.month = today.month
         self.day = today.day
         self.time = today.hour
+        self.issummer = None
+        self.winter = hardcoded.daylight_save[str(self.year)][0]
+        self.summer = hardcoded.daylight_save[str(self.year)][1]
+        if today>self.summer or today<self.winter:
+            self.daylight_save = 1
+        else:
+            self.daylight_save = 0
 
     def get_month_data(self):
         '''
@@ -127,8 +134,36 @@ class get_times():
 
         ##and get the data
         self.month_header = lines[40:47]
-        self.month_data = lines[50:]
-        self.month_data = [i.replace('.....', '.. ..') for i in self.month_data]
+        month_data = lines[50:]
+        month_data = [i.replace('.....', '.. ..') for i in month_data]
+        good = []
+        for i in month_data:
+            if i.split():
+                day_evening = i.split()[2].split('/')[0]
+                if datetime.datetime(year=self.year, month=self.month, day=int(day_evening))\
+                     >= self.summer or datetime.datetime(year=self.year, month=self.month, \
+                     day=int(day_evening)) <= self.winter - datetime.timedelta(hours=24): 
+                    new_i = i[:43] + str(int(i[43:45])+1) + i[45:50] + str(int(i[50:52])+1) +\
+                            i[52:58] + str(int(i[58:59])+1) + i[59:64] + str(int(i[64:65])+1) + i[65:]
+                    good.append(new_i) 
+
+                elif datetime.datetime(year=self.year, month=self.month, day=int(day_evening))\
+                        >= self.summer-datetime.timedelta(hours=24): 
+                    new_i =  i[:58] + str(int(i[58:59])+1) + i[59:64] + str(int(i[64:65])+1) + i[65:]
+                    good.append(new_i)
+ 
+                elif datetime.datetime(year=self.year, month=self.month, day=int(day_evening))\
+                        == self.winter: 
+                    new_i = i[:43] + str(int(i[43:45])+1) + i[45:50] + str(int(i[50:52])+1) + i[52:] 
+                    good.append(new_i)
+
+
+                else:
+                    good.append(i)
+            else:
+                good.append('')
+
+        self.month_data = good 
 
     def get_eso_now(self):
         '''
@@ -175,7 +210,6 @@ class get_times():
                 self.tomorrow.day, int(split[13]), int(split[14]), 00)
         self.sunrise = datetime.datetime(self.tomorrow.year, self.tomorrow.month, \
                 self.tomorrow.day, int(split[15]), int(split[16]), 00)
-
 
         ##and compute worthy information
         self.night_length = self.twi_mor-self.twi_eve

@@ -12,6 +12,9 @@ Ephemerides
 
 Change log
 ==========
+**19.9.1**:
+        * Take daylight saving time into consideration
+
 **19.7.3**:
         * Add sunrise and sunset attributes
 
@@ -53,7 +56,7 @@ To import it::
 For the main functinnality of the module you must select the observatory. As for now, five of them are available and can be listed via the **list_obs()** function::
 
         In [2]: ephemerides.list_obs()
-        ['Paranal', 'LaSilla', 'MaunaKea', 'Palomar', 'Tololo']
+        ['Paranal', 'LaSilla', 'Tololo']
 
 Then, you must webscrap the epehemerides from the ESO website. To do so yyou use the **get_yearly_ephemerides()** function. The help of this function will help you to use it::
 

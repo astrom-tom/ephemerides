@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Ephemerides &mdash; ephemerides 19.7.3 documentation</title>
+  <title>Ephemerides &mdash; ephemerides 19.9.1 documentation</title>
   
 
   
@@ -163,6 +163,10 @@
 <div class="section" id="change-log">
 <h1>Change log<a class="headerlink" href="#change-log" title="Permalink to this headline">¶</a></h1>
 <dl class="simple">
+<dt><strong>19.9.1</strong>:</dt><dd><ul class="simple">
+<li><p>Take daylight saving time into consideration</p></li>
+</ul>
+</dd>
 <dt><strong>19.7.3</strong>:</dt><dd><ul class="simple">
 <li><p>Add sunrise and sunset attributes</p></li>
 </ul>
@@ -201,7 +205,7 @@
 </div>
 <p>For the main functinnality of the module you must select the observatory. As for now, five of them are available and can be listed via the <strong>list_obs()</strong> function:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="n">ephemerides</span><span class="o">.</span><span class="n">list_obs</span><span class="p">()</span>
-<span class="p">[</span><span class="s1">&#39;Paranal&#39;</span><span class="p">,</span> <span class="s1">&#39;LaSilla&#39;</span><span class="p">,</span> <span class="s1">&#39;MaunaKea&#39;</span><span class="p">,</span> <span class="s1">&#39;Palomar&#39;</span><span class="p">,</span> <span class="s1">&#39;Tololo&#39;</span><span class="p">]</span>
+<span class="p">[</span><span class="s1">&#39;Paranal&#39;</span><span class="p">,</span> <span class="s1">&#39;LaSilla&#39;</span><span class="p">,</span> <span class="s1">&#39;Tololo&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>Then, you must webscrap the epehemerides from the ESO website. To do so yyou use the <strong>get_yearly_ephemerides()</strong> function. The help of this function will help you to use it:</p>
