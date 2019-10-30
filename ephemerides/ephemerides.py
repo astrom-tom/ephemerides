@@ -97,12 +97,16 @@ class get_times():
             self.tomorrow = today + datetime.timedelta(hours=12)
 
         self.year = today.year
+        self.next_year = int(today.year)+1
         self.month = today.month
         self.day = today.day
         self.time = today.hour
         self.issummer = None
-        self.winter = hardcoded.daylight_save[str(self.year)][0]
-        self.summer = hardcoded.daylight_save[str(self.year)][1]
+        self.winter = hardcoded.daylight_save_chile[str(self.year)][0]
+        self.summer = hardcoded.daylight_save_chile[str(self.next_year)][1]
+        self.winter_EU = hardcoded.daylight_save_EU[str(self.year)][0]
+        self.summer_EU = hardcoded.daylight_save_EU[str(self.next_year)][1]
+ 
         if today>self.summer or today<self.winter:
             self.daylight_save = 1
         else:
@@ -140,15 +144,18 @@ class get_times():
         for i in month_data:
             if i.split():
                 day_evening = i.split()[2].split('/')[0]
-                if datetime.datetime(year=self.year, month=self.month, day=int(day_evening))\
-                     >= self.summer or datetime.datetime(year=self.year, month=self.month, \
-                     day=int(day_evening)) <= self.winter - datetime.timedelta(hours=24): 
+                day_evening_date = datetime.datetime(year=self.year, month=self.month, day=int(day_evening))
+                if day_evening_date >= self.summer and day_evening_date<= self.winter_EU - datetime.timedelta(hours=24): 
                     new_i = i[:43] + str(int(i[43:45])+1) + i[45:50] + str(int(i[50:52])+1) +\
                             i[52:58] + str(int(i[58:59])+1) + i[59:64] + str(int(i[64:65])+1) + i[65:]
                     good.append(new_i) 
-
-                elif datetime.datetime(year=self.year, month=self.month, day=int(day_evening))\
-                        >= self.summer-datetime.timedelta(hours=24): 
+ 
+                elif day_evening_date >= self.winter_EU and day_evening_date<= self.summer_EU - datetime.timedelta(hours=24): 
+                    new_i = i[:43] + str(int(i[43:45])) + i[45:50] + str(int(i[50:52])) +\
+                            i[52:58] + str(int(i[58:59])) + i[59:64] + str(int(i[64:65])) + i[65:]
+                    good.append(new_i) 
+ 
+                elif day_evening_date >= self.summer_EU-datetime.timedelta(hours=24) and day_evening_date<self.winter: 
                     new_i =  i[:58] + str(int(i[58:59])+1) + i[59:64] + str(int(i[64:65])+1) + i[65:]
                     good.append(new_i)
  
@@ -156,7 +163,6 @@ class get_times():
                         == self.winter: 
                     new_i = i[:43] + str(int(i[43:45])+1) + i[45:50] + str(int(i[50:52])+1) + i[52:] 
                     good.append(new_i)
-
 
                 else:
                     good.append(i)
@@ -220,6 +226,23 @@ class get_times():
         self.fractions = {}
         for i in range(10):
             self.fractions['%sn'%((i+1)/10)] = self.twi_eve + (i+1)*self.night_length/10
+
+
+    def to_dir_format(self):
+        '''
+        Method that transform the current date into
+        a directory format, e.g., 2019-08-07
+        '''
+        if len(str(self.day)) == 1:
+            day = '0%s'%self.day
+        else:
+            day = self.day
+        if len(str(self.month)) == 1:
+            month = '0%s'%self.month
+        else:
+            month = self.month
+
+        return '%s-%s-%s'%(self.year, month, day)
 
 
 ###define errors
@@ -303,3 +326,5 @@ class eso_time_test(unittest.TestCase):
 
         expect_nighthalf = datetime.timedelta(hours=5, minutes=20)
         self.assertEqual(mytime.half_night, expect_nighthalf)
+
+

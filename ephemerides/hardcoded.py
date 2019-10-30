@@ -28,16 +28,20 @@ home_hidden = os.path.join(str(Path.home()), '.ephemerides')
 
 
 ###saving daylight time dates in Chile
-daylight_save = {'2019': [datetime.datetime(year=2019, month=4, day=7), datetime.datetime(year=2019, month=9, day=8)],
+daylight_save_chile = {'2019': [datetime.datetime(year=2019, month=4, day=7), datetime.datetime(year=2019, month=9, day=8)],
                  '2020': [datetime.datetime(year=2020, month=4, day=4), datetime.datetime(year=2020, month=9, day=6)],
                  '2021': [datetime.datetime(year=2021, month=4, day=4), datetime.datetime(year=2021, month=9, day=5)],
                  '2022': [datetime.datetime(year=2022, month=4, day=3), datetime.datetime(year=2022, month=9, day=4)]}
+
+###saving daylight time dates in Chile
+daylight_save_EU = {'2019': [datetime.datetime(year=2019, month=10, day=13), datetime.datetime(year=2019, month=3, day=31)],
+                    '2020': [datetime.datetime(year=2020, month=10, day=25), datetime.datetime(year=2020, month=3, day=8)]}
+
 
 
 ###observatories:
 observatories = {'Paranal':'v',\
                  'LaSilla':'e',\
-                 'Palomar':'p',\
                  'Tololo':'t'}
 
 ###ESO url

@@ -115,7 +115,7 @@ class tests(unittest.TestCase):
         '''
 
         ##expected result
-        exp = "['Paranal', 'LaSilla', 'MaunaKea', 'Palomar', 'Tololo']\n"
+        exp = "['Paranal', 'LaSilla', 'Tololo']\n"
 
         ###first capture the output
         capturedOutput = io.StringIO()

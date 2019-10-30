@@ -12,8 +12,11 @@ Ephemerides
 
 Change log
 ==========
+**19.10.1**:
+        * Take skycalc daylight saving time into consideration
+
 **19.9.1**:
-        * Take daylight saving time into consideration
+        * Take Chile daylight saving time into consideration
 
 **19.7.3**:
         * Add sunrise and sunset attributes
