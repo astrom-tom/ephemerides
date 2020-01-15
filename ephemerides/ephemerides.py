@@ -7,17 +7,12 @@ and the present night
 @author(s): R. Thomas, T. Berg
 @year(s): 2019
 @First version: 19.6-1
-@Current version: 19.7-0
+@Current version: 20.1-1
 @Telescope(s): ALL
 @Instrument(s): ALL
 @Licence: GPLv3
 @Testable: yes
 
-Change log:
------------
-19.6-3 - in get_eso_now removed [2:] on self.month_data for loop.
-to fix a bug on change of month. Code now works with
-change of month (can test with changing the system clock).
 '''
 
 ###standard Library import
@@ -137,8 +132,8 @@ class get_times():
             lines = F.readlines()
 
         ##and get the data
-        self.month_header = lines[40:47]
-        month_data = lines[50:]
+        self.month_header = lines[38:45]
+        month_data = lines[49:]
         month_data = [i.replace('.....', '.. ..') for i in month_data]
         good = []
         for i in month_data:
@@ -262,7 +257,7 @@ class eso_time_test(unittest.TestCase):
         '''
 
         ##create the object (in the afternoon)
-        fake = datetime.datetime(2019, 6, 15, 14)
+        fake = datetime.datetime(2020, 2, 15, 14)
         mytime = get_times('Paranal', fake)
 
         self.assertEqual(mytime.time, fake.hour)
@@ -270,14 +265,14 @@ class eso_time_test(unittest.TestCase):
         self.assertEqual(mytime.month, fake.month)
 
         ##try in the morning!!
-        fake = datetime.datetime(2019, 6, 15, 2)
+        fake = datetime.datetime(2020, 2, 15, 2)
         mytime = get_times('Paranal', fake)
         fake_new = fake-datetime.timedelta(hours=12)
         self.assertEqual(mytime.day, fake_new.day)
 
 
         ##try in the morning on 1st of the month!!
-        fake = datetime.datetime(2019, 7, 1, 2)
+        fake = datetime.datetime(2020, 2, 1, 2)
         mytime = get_times('Paranal', fake)
         fake_new = fake-datetime.timedelta(hours=12)
         self.assertEqual(mytime.day, fake_new.day)
@@ -288,23 +283,23 @@ class eso_time_test(unittest.TestCase):
         is the right one
         '''
         ##create the object
-        fake = datetime.datetime(2019, 6, 15, 2)
+        fake = datetime.datetime(2020, 2, 15, 2)
         mytime = get_times('Paranal', fake)
 
         ##line from the sheet
-        expect = 'Fri Jun 14/Sat Jun 15  8649.7   16 51 02'+\
-                '   18 08  19 22   6 02  7 16   12 12  22 54   16 02   5 42    94  15 42.4 -15 26\n'
+        expect = 'Fri Feb 14/Sat Feb 15  8894.6    7 56 48'+\
+                 '   20 31  21 44   6 08  7 21    5 40  14 06    0 31  .. ..    58  15 00.8 -12 12\n'
         ##and compare
         self.assertEqual(expect, mytime.day_data)
 
 
         ##same day, later in the afternoon
         ##create the object
-        fake = datetime.datetime(2019, 6, 15, 16)
+        fake = datetime.datetime(2020, 2, 15, 23)
         mytime = get_times('Paranal', fake)
 
-        expect = 'Sat Jun 15/Sun Jun 16  8650.7   16 54 58'+\
-                '   18 09  19 22   6 03  7 16   12 16  22 58   16 46   6 41    98  16 37.1 -18 47\n'
+        expect = 'Sat Feb 15/Sun Feb 16  8895.6    8 00 44'+\
+                 '   20 30  21 43   6 09  7 21    5 43  14 11    1 14  .. ..    47  15 54.8 -16 26\n'
         self.assertEqual(expect, mytime.day_data)
 
 
@@ -313,18 +308,18 @@ class eso_time_test(unittest.TestCase):
         This test check that the length computation is
         correct
         '''
-        misc.get_yearly_ephemerides('Paranal', datetime.datetime(year=2019, month=6, day=1))
+        misc.get_yearly_ephemerides('Paranal', datetime.datetime(year=2020, month=2, day=1))
         ##create the object
-        fake = datetime.datetime(2019, 6, 15, 2)
+        fake = datetime.datetime(2020, 2, 15, 23)
         mytime = get_times('Paranal', fake)
 
-        expect_nightlength = datetime.timedelta(hours=10, minutes=40)
+        expect_nightlength = datetime.timedelta(hours=8, minutes=26)
         self.assertEqual(mytime.night_length, expect_nightlength)
 
-        expect_nighttenth = datetime.timedelta(hours=1, minutes=4)
+        expect_nighttenth = datetime.timedelta(minutes=50, seconds=36)
         self.assertEqual(mytime.tenth_night, expect_nighttenth)
 
-        expect_nighthalf = datetime.timedelta(hours=5, minutes=20)
+        expect_nighthalf = datetime.timedelta(hours=4, minutes=13)
         self.assertEqual(mytime.half_night, expect_nighthalf)
 
 

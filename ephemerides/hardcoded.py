@@ -6,7 +6,7 @@ It is the hardcoded parameters
 @author(s): R. Thomas
 @year(s): 2019
 @First version: 19.7-0
-@Current version: 19.7-0
+@Current version: 20.1-1
 @Telescope(s): ALL
 @Instrument(s): ALL
 @Valid for SciOpsPy: v19-10
@@ -35,7 +35,9 @@ daylight_save_chile = {'2019': [datetime.datetime(year=2019, month=4, day=7), da
 
 ###saving daylight time dates in Chile
 daylight_save_EU = {'2019': [datetime.datetime(year=2019, month=10, day=13), datetime.datetime(year=2019, month=3, day=31)],
-                    '2020': [datetime.datetime(year=2020, month=10, day=25), datetime.datetime(year=2020, month=3, day=8)]}
+                    '2020': [datetime.datetime(year=2020, month=10, day=25), datetime.datetime(year=2020, month=3, day=8)],
+                    '2021': [datetime.datetime(year=2021, month=10, day=25), datetime.datetime(year=2021, month=3, day=8)],
+                    '2022': [datetime.datetime(year=2022, month=10, day=25), datetime.datetime(year=2022, month=3, day=8)]}
 
 
 

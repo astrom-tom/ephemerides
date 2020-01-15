@@ -12,6 +12,9 @@ Ephemerides
 
 Change log
 ==========
+**20.1.1**:
+        * Bug when passing to 2020 & change of format for 2020 ephemride tables
+
 **19.10.1**:
         * Take skycalc daylight saving time into consideration
 
