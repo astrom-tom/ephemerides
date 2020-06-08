@@ -12,7 +12,7 @@ Ephemerides
 
 Change log
 ==========
-**20.6.1**:
+**20.6.2**:
         * Include all ephemerides from jan 2011 to January 2023 in the package (no need to download anymore). No home directory anymore. Hence you should install it within you home directory (using --user).
         * Remove Tololo and La silla
 

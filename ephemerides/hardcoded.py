@@ -42,7 +42,13 @@ daylight_save_chile = {'2014': [datetime.datetime(year=2014, month=4, day=27),
                        '2021': [datetime.datetime(year=2021, month=4, day=4),
                                 datetime.datetime(year=2021, month=9, day=5)],
                        '2022': [datetime.datetime(year=2022, month=4, day=3),
-                                datetime.datetime(year=2022, month=9, day=4)]}
+                                datetime.datetime(year=2022, month=9, day=4)],
+                       '2023': [datetime.datetime(year=2023, month=4, day=2),
+                                datetime.datetime(year=2023, month=9, day=3)],
+                       '2024': [datetime.datetime(year=2024, month=4, day=7),
+                                datetime.datetime(year=2024, month=9, day=8)]}
+
+
 
 ###saving daylight time dates in Chile
 daylight_save_EU = {'2014': [datetime.datetime(year=2014, month=10, day=26),
@@ -58,11 +64,16 @@ daylight_save_EU = {'2014': [datetime.datetime(year=2014, month=10, day=26),
                     '2019': [datetime.datetime(year=2019, month=10, day=27),
                              datetime.datetime(year=2019, month=3, day=31)],
                     '2020': [datetime.datetime(year=2020, month=10, day=25),
-                             datetime.datetime(year=2020, month=3, day=8)],
-                    '2021': [datetime.datetime(year=2021, month=10, day=25),
-                             datetime.datetime(year=2021, month=3, day=8)],
-                    '2022': [datetime.datetime(year=2022, month=10, day=25),
-                             datetime.datetime(year=2022, month=3, day=8)]}
+                             datetime.datetime(year=2020, month=3, day=29)],
+                    '2021': [datetime.datetime(year=2021, month=10, day=31),
+                             datetime.datetime(year=2021, month=3, day=28)],
+                    '2022': [datetime.datetime(year=2022, month=10, day=30),
+                             datetime.datetime(year=2022, month=3, day=27)],
+                    '2023': [datetime.datetime(year=2023, month=10, day=29),
+                             datetime.datetime(year=2023, month=3, day=26)],
+                    '2024': [datetime.datetime(year=2024, month=10, day=27),
+                             datetime.datetime(year=2024, month=3, day=31)]}
+
 
 
 

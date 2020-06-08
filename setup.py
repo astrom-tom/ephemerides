@@ -1,6 +1,6 @@
 from setuptools import setup
 
-version = '20.6.1'
+version = '20.6.2'
 
 setup(
    name = 'ephemerides',
