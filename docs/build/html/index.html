@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Ephemerides &mdash; ephemerides 19.10.1 documentation</title>
+  <title>Ephemerides &mdash; ephemerides 20.6.1 documentation</title>
   
 
   
@@ -23,10 +23,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -163,6 +163,15 @@
 <div class="section" id="change-log">
 <h1>Change log<a class="headerlink" href="#change-log" title="Permalink to this headline">¶</a></h1>
 <dl class="simple">
+<dt><strong>20.6.1</strong>:</dt><dd><ul class="simple">
+<li><p>Include all ephemerides from jan 2011 to January 2023 in the package (no need to download anymore). No home directory anymore. Hence you should install it within you home directory (using –user).</p></li>
+<li><p>Remove Tololo and La silla</p></li>
+</ul>
+</dd>
+<dt><strong>20.1.1</strong>:</dt><dd><ul class="simple">
+<li><p>Bug when passing to 2020 &amp; change of format for 2020 ephemride tables</p></li>
+</ul>
+</dd>
 <dt><strong>19.10.1</strong>:</dt><dd><ul class="simple">
 <li><p>Take skycalc daylight saving time into consideration</p></li>
 </ul>
@@ -209,10 +218,10 @@
 </div>
 <p>For the main functinnality of the module you must select the observatory. As for now, five of them are available and can be listed via the <strong>list_obs()</strong> function:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="n">ephemerides</span><span class="o">.</span><span class="n">list_obs</span><span class="p">()</span>
-<span class="p">[</span><span class="s1">&#39;Paranal&#39;</span><span class="p">,</span> <span class="s1">&#39;LaSilla&#39;</span><span class="p">,</span> <span class="s1">&#39;Tololo&#39;</span><span class="p">]</span>
+<span class="p">[</span><span class="s1">&#39;Paranal&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>Then, you must webscrap the epehemerides from the ESO website. To do so yyou use the <strong>get_yearly_ephemerides()</strong> function. The help of this function will help you to use it:</p>
+<p>If you want dates after January 2023, you must webscrap the ephemerides from the ESO website. To do so you use the <strong>get_yearly_ephemerides()</strong> function. The help of this function will help you to use it:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="n">help</span><span class="p">(</span><span class="n">ephemerides</span><span class="o">.</span><span class="n">get_yearly_ephemerides</span><span class="p">)</span>
 
 <span class="n">get_yearly_ephemerides</span><span class="p">(</span><span class="n">observatory</span><span class="p">,</span> <span class="n">time</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
@@ -235,7 +244,7 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">4</span><span class="p">]:</span> <span class="n">ephemerides</span><span class="o">.</span><span class="n">get_yearly_ephemerides</span><span class="p">(</span><span class="s1">&#39;Paranal&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>This function will webscrap all the ephemerides for the next month. The files will be places in your home directory in a hidden subdirectory called <em>ephemerides</em>. They have a format ‘ESO_ephem_Observatory_name_year_month.txt’ and are human readable.</p>
+<p>This function will webscrap all the ephemerides for the next month. The files will be places in the directory ephem inside the module. They have a format ‘ESO_ephem_Observatory_name_year_month.txt’ and are human readable.</p>
 <p>Once you have them all you can use the main functionality of the code, the <strong>get_times</strong> object. The help of this class gives:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>In [5]: help(ephemerides.get_times)
 

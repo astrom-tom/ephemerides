@@ -65,10 +65,6 @@ def get_yearly_ephemerides(observatory, time = False):
     ------
     None
     '''
-
-    if not os.path.isdir(hardcoded.home_hidden):
-        os.makedirs(hardcoded.home_hidden)
-
     ##get the url
     url = hardcoded.ephemerides_url
 
@@ -88,7 +84,7 @@ def get_yearly_ephemerides(observatory, time = False):
 
         ##We create the file name and the one with paths
         filename = 'ESO_ephe_%s_%s_%s.txt'%(observatory, now.year, now.month)
-        with_path = os.path.join(hardcoded.home_hidden, filename)
+        with_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'ephem', filename)
 
         ###if the file does not already exists we scrap it
         if not os.path.isfile(with_path):
@@ -96,8 +92,12 @@ def get_yearly_ephemerides(observatory, time = False):
             lines = str(BeautifulSoup(response.content, 'html.parser')).split('\n')
             ###and write it down
             with open(with_path, 'w') as F:
+                k=False
                 for j in lines:
-                    F.write(j+'\n')
+                    if 'Date ' in j:
+                        k = True
+                    if k and j.strip() != '':
+                        F.write(j+'\n')
 
         ###update to the next month
         now = now + datetime.timedelta(days=31)
@@ -115,7 +115,7 @@ class tests(unittest.TestCase):
         '''
 
         ##expected result
-        exp = "['Paranal', 'LaSilla', 'Tololo']\n"
+        exp = "['Paranal']\n"
 
         ###first capture the output
         capturedOutput = io.StringIO()

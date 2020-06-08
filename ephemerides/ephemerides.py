@@ -6,8 +6,8 @@ and the present night
 @place: ESO - La Silla - Paranal Observatory
 @author(s): R. Thomas, T. Berg
 @year(s): 2019
-@First version: 19.6-1
-@Current version: 20.1-1
+@First version: 19.6.1
+@Current version: 20.6.1
 @Telescope(s): ALL
 @Instrument(s): ALL
 @Licence: GPLv3
@@ -121,7 +121,8 @@ class get_times():
 
         ##First we create the file name
         filename = 'ESO_ephe_%s_%s_%s.txt'%(self.obs, self.year, self.month)
-        with_path = os.path.join(hardcoded.home_hidden, filename)
+        with_path = os.path.join(os.path.dirname(os.path.realpath(__file__)),
+                                 'ephem',filename)
 
         if not os.path.isfile(with_path):
             raise No_ephemerides_file('Please download the ephemerides with'+\
@@ -132,14 +133,15 @@ class get_times():
             lines = F.readlines()
 
         ##and get the data
-        self.month_header = lines[38:45]
-        month_data = lines[49:]
+        self.month_header = lines[0:2]
+        month_data = lines[2:]
         month_data = [i.replace('.....', '.. ..') for i in month_data]
         good = []
         for i in month_data:
             if i.split():
                 day_evening = i.split()[2].split('/')[0]
-                day_evening_date = datetime.datetime(year=self.year, month=self.month, day=int(day_evening))
+                day_evening_date = datetime.datetime(year=self.year, month=self.month,
+                                                     day=int(day_evening))
                 if day_evening_date >= self.summer and day_evening_date<= self.winter_EU - datetime.timedelta(hours=24): 
                     new_i = i[:43] + str(int(i[43:45])+1) + i[45:50] + str(int(i[50:52])+1) +\
                             i[52:58] + str(int(i[58:59])+1) + i[59:64] + str(int(i[64:65])+1) + i[65:]
