@@ -98,9 +98,9 @@ class get_times():
         self.time = today.hour
         self.issummer = None
         self.winter = hardcoded.daylight_save_chile[str(self.year)][0]
-        self.summer = hardcoded.daylight_save_chile[str(self.next_year)][1]
+        self.summer = hardcoded.daylight_save_chile[str(self.year)][1]
         self.winter_EU = hardcoded.daylight_save_EU[str(self.year)][0]
-        self.summer_EU = hardcoded.daylight_save_EU[str(self.next_year)][1]
+        self.summer_EU = hardcoded.daylight_save_EU[str(self.year)][1]
  
         if today>self.summer or today<self.winter:
             self.daylight_save = 1
@@ -142,25 +142,23 @@ class get_times():
                 day_evening = i.split()[2].split('/')[0]
                 day_evening_date = datetime.datetime(year=self.year, month=self.month,
                                                      day=int(day_evening))
+
                 if day_evening_date >= self.summer and day_evening_date<= self.winter_EU - datetime.timedelta(hours=24): 
                     new_i = i[:43] + str(int(i[43:45])+1) + i[45:50] + str(int(i[50:52])+1) +\
                             i[52:58] + str(int(i[58:59])+1) + i[59:64] + str(int(i[64:65])+1) + i[65:]
                     good.append(new_i) 
  
-                elif day_evening_date >= self.winter_EU and day_evening_date<= self.summer_EU - datetime.timedelta(hours=24): 
-                    new_i = i[:43] + str(int(i[43:45])) + i[45:50] + str(int(i[50:52])) +\
-                            i[52:58] + str(int(i[58:59])) + i[59:64] + str(int(i[64:65])) + i[65:]
+                elif datetime.datetime(self.year,12,31)>= day_evening_date >= self.winter_EU-datetime.timedelta(hours=24):
+                    good.append(i) 
+ 
+                elif datetime.datetime(self.year, 1, 1) <= day_evening_date <= self.summer_EU-datetime.timedelta(hours=24): 
+                    good.append(i)
+ 
+                elif self.summer_EU-datetime.timedelta(hours=24) <= day_evening_date <= self.winter: 
+                    new_i = i[:43] + str(int(i[43:45])+1) + i[45:50] + str(int(i[50:52])+1) +\
+                            i[52:58] + str(int(i[58:59])+1) + i[59:64] + str(int(i[64:65])+1) + i[65:]
                     good.append(new_i) 
  
-                elif day_evening_date >= self.summer_EU-datetime.timedelta(hours=24) and day_evening_date<self.winter: 
-                    new_i =  i[:58] + str(int(i[58:59])+1) + i[59:64] + str(int(i[64:65])+1) + i[65:]
-                    good.append(new_i)
- 
-                elif datetime.datetime(year=self.year, month=self.month, day=int(day_evening))\
-                        == self.winter: 
-                    new_i = i[:43] + str(int(i[43:45])+1) + i[45:50] + str(int(i[50:52])+1) + i[52:] 
-                    good.append(new_i)
-
                 else:
                     good.append(i)
             else:
